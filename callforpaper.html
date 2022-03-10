@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>continuous scrolling images</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<style type="text/css">
+body {
+     background-image:url(images/bodyBg.jpg);
+     background-color:#006;
+ }
+#container {
+     position:relative;
+     width:424px;
+     height:106px;
+     overflow:hidden;
+     border:5px double #000;
+     background-color:#fff;
+     margin:100px auto 0 auto;
+ }
+#div1 {
+     position:absolute;
+     left:0px;
+     top:0px;
+     width:424px;
+     height:106px;
+ }
+#div2 {
+     position:absolute;
+     left:424px;
+     top:0px;
+     width:424px;
+     height:106px;
+ }
+img {
+     border:1px solid #000;
+     margin:2px;
+     float:left;
+ }
+</style>
+
+<script type="text/javascript">
+  var m=0;
+  var n=424;
+  var speed=20;
+function scrollPics() {
+     document.getElementById('div1').style.left=m+'px';
+     document.getElementById('div2').style.left=n+'px';
+   m--;
+   n--;
+if(m==-424) {
+   m=424;
+ }
+if(n==-424) {
+   n=424;
+ }
+setTimeout('scrollPics()',speed);
+ } 
+window.onload=function() {
+   scrollPics();
+ }
+</script>
+
+</head>
+<body>
+
+<div id="container">
+
+<div id="div1">
+    <img style="padding-top:2px ; height: 200px;" src="images\hawa.jpg" alt="">
+    <img style="height: 200px;" src="images\amber.jpg" alt="">
+    <img style="height: 200px;" src="images\birla.jpg" alt="">
+    <img style="height: 200px;" src="images\citypalace.jpg" alt="">
+    <img style="height: 200px;" src="images\galta.jpg" alt="">
+    <img style="height: 200px;" src="images\jal.jpg" alt="">
+    <img style="height: 200px;" src="images\jantar.jpg" alt="">
+    <img style="height: 200px;" src="images\nahar.jpg" alt="">
+</div>
+
+<div id="div2">
+    <img style="padding-top:2px ; height: 200px;" src="images\hawa.jpg" alt="">
+    <img style="height: 200px;" src="images\amber.jpg" alt="">
+    <img style="height: 200px;" src="images\birla.jpg" alt="">
+    <img style="height: 200px;" src="images\citypalace.jpg" alt="">
+    <img style="height: 200px;" src="images\galta.jpg" alt="">
+    <img style="height: 200px;" src="images\jal.jpg" alt="">
+    <img style="height: 200px;" src="images\jantar.jpg" alt="">
+    <img style="height: 200px;" src="images\nahar.jpg" alt="">
+</div>
+
+</div>
+
+</body>
+</html>
